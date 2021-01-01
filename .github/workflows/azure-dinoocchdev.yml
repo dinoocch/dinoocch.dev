@@ -51,3 +51,14 @@ jobs:
           azcliversion: 2.0.72
           inlineScript: |
             az storage blob upload-batch --account-name dinoocchdev -d '$web' -s frontend/dist
+
+      - name: Purge CDN Cache
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az cdn endpoint purge --no-wait --content-paths  "/*" --profile-name "dinoocchdev-cdn" --name "dinoocchdev" --resource-group "dinoocch.dev"
+
+    - name: Logout of Azure
+      run: |
+            az logout
