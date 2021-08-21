@@ -57,4 +57,4 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az cdn endpoint purge --no-wait --content-paths  "/*" --profile-name "dinoocchdev-cdn" --name "dinoocchdev" --resource-group "dinoocch.dev"
+            az cdn endpoint purge --content-paths  "/*" --profile-name "dinoocchdev-cdn" --name "dinoocchdev" --resource-group "dinoocch.dev"
